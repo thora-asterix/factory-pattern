@@ -25,8 +25,7 @@ public class HondaVehicle implements Vehicle {
         return this.color;
     }
 
-    @Override
-    public EngineType engine(String engineType) {
+    private EngineType engine(String engineType) {
 
         EngineTypeVariety engineTypeVariety = EngineTypeVariety.valueOf(engineType);
 

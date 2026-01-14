@@ -9,7 +9,7 @@ public interface Vehicle {
 
     public String color();
 
-    public EngineType engine(String engineType);
+   // public EngineType engine(String engineType);
 
     public EngineType checkEngineType();
 
