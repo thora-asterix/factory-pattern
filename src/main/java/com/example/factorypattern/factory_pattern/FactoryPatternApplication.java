@@ -17,7 +17,7 @@ public class FactoryPatternApplication {
 
 	    HondaVehicle vehicleOne = (HondaVehicle) VehicleFactory.makeVehicle(VehicleBrands.HONDA, VehicleColors.BLACK, EngineTypeVariety.GAS);
 
-		log.info("The object returned is of  " + vehicleOne.getClass().toString());
+		log.info("The object returned is of  " + vehicleOne.getClass());
 		log.info("The vehicle is " + vehicleOne.color());
 		log.info("The vehicle has a " + vehicleOne.checkEngineType().engineType());
 
