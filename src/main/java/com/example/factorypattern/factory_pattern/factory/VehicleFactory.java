@@ -1,9 +1,7 @@
 package com.example.factorypattern.factory_pattern.factory;
 
-import com.example.factorypattern.factory_pattern.vehicles.HondaVehicle;
-import com.example.factorypattern.factory_pattern.vehicles.NissanVehicle;
-import com.example.factorypattern.factory_pattern.vehicles.Vehicle;
-import com.example.factorypattern.factory_pattern.vehicles.VehicleBrands;
+import com.example.factorypattern.factory_pattern.enginees.EngineTypeVariety;
+import com.example.factorypattern.factory_pattern.vehicles.*;
 
 public class VehicleFactory {
 
@@ -11,15 +9,15 @@ public class VehicleFactory {
 
     }
 
-    public static Vehicle makeVehicle(String brand, String color, String engineType) {
+    public static Vehicle makeVehicle(VehicleBrands brand, VehicleColors color, EngineTypeVariety engineType) {
 
        switch(brand) {
-           case "NISSAN":
+           case VehicleBrands.NISSAN:
                return new NissanVehicle(color, engineType);
-           case "HONDA":
+           case VehicleBrands.HONDA:
                return new HondaVehicle(color, engineType);
            default:
-               throw new IllegalArgumentException("Uknown vehicle brand: " + brand);
+               throw new IllegalArgumentException("unknown vehicle brand: " + brand);
 
        }
 

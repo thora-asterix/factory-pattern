@@ -13,16 +13,15 @@ public class FactoryPatternApplication {
 
 	public static void main(String[] args) {
 
-
 		SpringApplication.run(FactoryPatternApplication.class, args);
 
-	    HondaVehicle vehicleOne = (HondaVehicle) VehicleFactory.makeVehicle(VehicleBrands.HONDA.toString(), VehicleColors.BLACK.toString(), EngineTypeVariety.GAS.toString());
+	    HondaVehicle vehicleOne = (HondaVehicle) VehicleFactory.makeVehicle(VehicleBrands.HONDA, VehicleColors.BLACK, EngineTypeVariety.GAS);
 
 		log.info("The object returned is of  " + vehicleOne.getClass().toString());
 		log.info("The vehicle is " + vehicleOne.color());
 		log.info("The vehicle has a " + vehicleOne.checkEngineType().engineType());
 
-		NissanVehicle vehicleTwo = (NissanVehicle) VehicleFactory.makeVehicle(VehicleBrands.NISSAN.toString(), VehicleColors.SILVER.toString(), EngineTypeVariety.SOLAR.toString());
+		NissanVehicle vehicleTwo = (NissanVehicle) VehicleFactory.makeVehicle(VehicleBrands.NISSAN, VehicleColors.SILVER, EngineTypeVariety.SOLAR);
 		log.info("The object returned is of  " + vehicleTwo.getClass());
 		log.info("The vehicle is " + vehicleTwo.color());
 		log.info("The vehicle has a " + vehicleTwo.checkEngineType().engineType());

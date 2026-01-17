@@ -9,15 +9,17 @@ public class HondaVehicle implements Vehicle {
 
     final private String color;
     final private EngineType engineType;
+    final private String type;
 
 
-    public HondaVehicle(String color, String engineType){
-        this.color = color;
+    public HondaVehicle(VehicleColors color, EngineTypeVariety engineType){
+        this.color = color.toString();
         this.engineType = this.engine(engineType);
+        this.type = "Honda";
     }
     @Override
     public String type() {
-        return "HONDA";
+        return type;
     }
 
     @Override
@@ -25,15 +27,13 @@ public class HondaVehicle implements Vehicle {
         return this.color;
     }
 
-    private EngineType engine(String engineType) {
+    private EngineType engine(EngineTypeVariety engineType) {
 
-        EngineTypeVariety engineTypeVariety = EngineTypeVariety.valueOf(engineType);
-
-        if(engineTypeVariety == EngineTypeVariety.SOLAR){
+        if(engineType == EngineTypeVariety.SOLAR){
             return new SolarFuelEngineType();
-        } else if(engineTypeVariety == EngineTypeVariety.GAS){
+        } else if(engineType == EngineTypeVariety.GAS){
             return new GasPoweredEngineType();
-        } else if(engineTypeVariety == EngineTypeVariety.ELECTRIC) {
+        } else if(engineType == EngineTypeVariety.ELECTRIC) {
             return new SolarFuelEngineType();
         }
         return new GasPoweredEngineType();
